@@ -99,6 +99,8 @@ Try it yourself!
 -- Select a new driver id (needs to be unique)
 -- Make sure to deparate arguments by a semicolon!
 
+insert INTO drivers VALUES (5, "Neha Murthy", "Indian", 14);
+
 
 
 -- SQLBook: Markup
@@ -186,7 +188,8 @@ Try it yourself!
 with more than 60 victories
 -- SQLBook: Code
 -- Write your own code!
-
+SELECT driver_id, nationality FROM drivers
+WHERE victories >=60;
 
 
 -- SQLBook: Markup
@@ -238,7 +241,7 @@ SELECT nationality,
        MIN(victories) AS min_victories,
        MAX(victories) AS max_victories
 FROM drivers
-WHERE nationality = 'German'
+WHERE (nationality = 'German') or (nationality='Columbian')
 GROUP BY nationality
 HAVING SUM(victories) > 50;
 -- SQLBook: Markup
